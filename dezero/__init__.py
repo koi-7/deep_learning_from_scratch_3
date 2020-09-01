@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # coding: utf-8
 
-is_simple_core = True
+is_simple_core = False
 
 if is_simple_core:
     from dezero.core_simple import Variable
