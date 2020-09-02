@@ -25,3 +25,7 @@ else:
 
     import dezero.functions
 ```
+
+### ステップ 43
+
+linear、sigmoid は functions.py にコピペしておく。さらに、function.py に cuda をインポートし、dezero ディレクトリに cuda.py をつくる（コピペでよい）。
