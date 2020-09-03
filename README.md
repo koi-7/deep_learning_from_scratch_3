@@ -21,3 +21,5 @@ linear、sigmoid は functions.py にコピペしておく。さらに、dezero 
 ### ステップ 45
 
 \_\_init\_\_.py の else 節に ```from dezero.layers import Layer``` も加えておく
+
+### ステップ 48
