@@ -12,20 +12,12 @@
 
 ### ステップ 40
 
-step40.py でエラー
-
-![](https://user-images.githubusercontent.com/61448492/91954804-46830100-ed3d-11ea-8e21-66731b012f97.jpg)
-
-\_\_init\_\_.py の else 節に ```import dezero.functions``` を追加することで動くようになった
-
-```
-else:
-    ...
-    from dezero.core import setup_variable
-
-    import dezero.functions
-```
+\_\_init\_\_.py の else 節に ```import dezero.functions``` も加えておく
 
 ### ステップ 43
 
-linear、sigmoid は functions.py にコピペしておく。さらに、function.py に cuda をインポートし、dezero ディレクトリに cuda.py をつくる（コピペでよい）。
+linear、sigmoid は functions.py にコピペしておく。さらに、dezero ディレクトリに cuda.py をつくって（コピペでよい）、function.py にて cuda をインポートする。
+
+### ステップ 45
+
+\_\_init\_\_.py の else 節に ```from dezero.layers import Layer``` も加えておく
