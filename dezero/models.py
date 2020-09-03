@@ -4,8 +4,8 @@
 
 from dezero import Layer
 from dezero import utils
-from dezero.functions as F
-from dezero.layers as L
+import dezero.functions as F
+import dezero.layers as L
 
 
 class Model(Layer):
