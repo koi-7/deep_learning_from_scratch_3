@@ -24,7 +24,9 @@ else:
     from dezero.core import Parameter
     from dezero.layers import Layer
     from dezero.models import Model
+    from dezero.datasets import Dataset
 
     import dezero.functions
+    import dezero.transforms
 
 setup_variable()
