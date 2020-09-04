@@ -25,3 +25,7 @@ linear、sigmoid は functions.py にコピペしておく。さらに、dezero 
 ### ステップ 48
 
 テキストのコードだけではとても実行できないのでエラーを見ながらその都度コードを追加していく
+
+### ステップ 49
+
+datasets.py に get_spiral 関数を追加する必要がある
