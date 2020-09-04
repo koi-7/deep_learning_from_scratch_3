@@ -9,7 +9,7 @@
 - [オライリージャパン](https://www.oreilly.co.jp/books/9784873119069/)
 - [GitHub（オライリージャパン）](https://github.com/oreilly-japan/deep-learning-from-scratch-3)
 
-## 躓いたポイント
+## 注意点
 
 ### ステップ 40
 
@@ -30,3 +30,7 @@ linear、sigmoid は functions.py にコピペしておく。さらに、dezero 
 ### ステップ 49
 
 datasets.py に get_spiral 関数を追加する必要がある
+
+### ステップ 51
+
+ステップ 48 同様、エラーを見ながら適宜コードをコピペしてくる必要がある
