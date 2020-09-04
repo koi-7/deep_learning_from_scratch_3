@@ -34,3 +34,22 @@ datasets.py に get_spiral 関数を追加する必要がある
 ### ステップ 51
 
 ステップ 48 同様、エラーを見ながら適宜コードをコピペしてくる必要がある
+
+### ステップ 52
+
+functions.py の一部書き換えが必要かもしれない（コメントアウトの箇所）
+
+``` python
+class ReLU(Function):
+    def forward(self, x):
+        # xp = dezero.cuda.get_array_module(x)     ## dezero. が不要
+        xp = cuda.get_array_module(x)
+        y = xp.maximum(x, 0.0)
+        return y
+
+    def backward(self, gy):
+        x, = self.inputs
+        mask = x.data > 0
+        gx = gy * mask
+        return gx
+```
