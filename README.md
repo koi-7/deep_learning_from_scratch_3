@@ -7,6 +7,7 @@
 ## URL
 
 - [オライリージャパン](https://www.oreilly.co.jp/books/9784873119069/)
+- [GitHub（オライリージャパン）](https://github.com/oreilly-japan/deep-learning-from-scratch-3)
 
 ## 躓いたポイント
 
