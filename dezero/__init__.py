@@ -29,6 +29,7 @@ else:
     from dezero.datasets import Dataset
     from dezero.dataloaders import DataLoader
 
+    import dezero.optimizers
     import dezero.functions
     import dezero.functions_conv
     import dezero.transforms
