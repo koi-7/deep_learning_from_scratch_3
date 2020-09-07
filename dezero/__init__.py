@@ -30,6 +30,7 @@ else:
     from dezero.dataloaders import DataLoader
 
     import dezero.functions
+    import dezero.functions_conv
     import dezero.transforms
 
 setup_variable()

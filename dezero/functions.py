@@ -4,8 +4,8 @@
 
 import numpy as np
 import dezero
-from dezero.core import Function, Variable, as_variable, as_array
 from dezero import cuda, utils
+from dezero.core import Function, Variable, as_variable, as_array
 
 
 class Sin(Function):
@@ -107,18 +107,39 @@ def reshape(x, shape):
     return Reshape(shape)(x)
 
 
+# class Transpose(Function):
+#     def forward(self, x):
+#         y = np.transpose(x)
+#         return y
+
+#     def backward(self, gy):
+#         gx = transpose(gy)
+#         return gx
+
+
+# def transpose(x):
+#     return Transpose()(x)
+
+
 class Transpose(Function):
+    def __init__(self, axes=None):
+        self.axes = axes
+
     def forward(self, x):
-        y = np.transpose(x)
+        y = x.transpose(self.axes)
         return y
 
     def backward(self, gy):
-        gx = transpose(gy)
-        return gx
+        if self.axes is None:
+            return transpose(gy)
+
+        axes_len = len(self.axes)
+        inv_axes = tuple(np.argsort([ax % axes_len for ax in self.axes]))
+        return transpose(gy, inv_axes)
 
 
-def transpose(x):
-    return Transpose()(x)
+def transpose(x, axes=None):
+    return Transpose(axes)(x)
 
 
 class Sum(Function):
@@ -396,3 +417,18 @@ class Clip(Function):
 
 def clip(x, x_min, x_max):
     return Clip(x_min, x_max)(x)
+
+
+from dezero.functions_conv import conv2d
+from dezero.functions_conv import deconv2d
+from dezero.functions_conv import conv2d_simple
+from dezero.functions_conv import im2col
+from dezero.functions_conv import col2im
+
+from dezero.core import add
+from dezero.core import sub
+from dezero.core import rsub
+from dezero.core import mul
+from dezero.core import div
+from dezero.core import neg
+from dezero.core import pow
