@@ -53,3 +53,19 @@ class ReLU(Function):
         gx = gy * mask
         return gx
 ```
+
+### ステップ 57
+
+step57.py 後半の
+
+``` python
+y = F.conv2d_simple(x, W, b=None, stride=1, pad=1)
+```
+
+は transpose() のせいでうまく動かないので代わりに
+
+``` python
+y = F.conv2d(x, W, b=None, stride=1, pad=1)
+```
+
+にしていろいろ書き加える必要がある。
